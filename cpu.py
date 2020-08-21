@@ -123,14 +123,14 @@ class CPU:
                 self.alu("CMP", self.ram[self.pc + 1], self.ram[self.pc + 2])
 
             elif command == self.jmp:
-                # Jump to - Set program counter to address, increment, jump
+                # Jump to - Set program counter to address sotred in the given reg
                 self.pc = self.reg[self.ram[self.pc + 1]]
                 continue
 
             elif command == self.jeq:
                 # if equal is set to true
                 if self.eql == 1:
-                    # Jump to - Set program counter to address, increment, jump
+                    # Jump to - Set program counter to address stored in the given reg
                     self.pc = self.reg[self.ram[self.pc + 1]]
                     #
                     continue
@@ -138,7 +138,7 @@ class CPU:
             elif command == self.jne:
                 # if equal is false
                 if self.eql == 0:
-                    # Jump to - Set program counter to address, increment, jump
+                    # Jump to - Set program counter to address stored in the given reg
                     self.pc = self.reg[self.ram[self.pc + 1]]
                     continue
 
